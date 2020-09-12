@@ -1,13 +1,21 @@
 <template>
   <div id="generator">
-<p>This is where the Generator will be </p>
+<p>{{currentPassword}}</p>
+<button @click="updateCurrentPass">click to update state</button>
   </div>
 </template>
 
 <script>
+import { inject } from 'vue';
+
 export default {
   setup() {
-    return {};
+    const currentPassword = inject('password');
+    const updateCurrentPass = inject('updatePassword');
+    return {
+      currentPassword,
+      updateCurrentPass,
+    };
   },
 };
 </script>

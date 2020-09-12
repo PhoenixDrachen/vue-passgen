@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { inject } from 'vue';
 
 export default {
   setup() {
-    const pastPasswords = ref(['lfdafjlks', 'klfjdasljfdsjlka', 'fldasjlfksa']);
+    const pastPasswords = inject('passwords');
     return {
       pastPasswords,
     };
