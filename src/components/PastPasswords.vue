@@ -9,6 +9,7 @@ import { inject } from 'vue';
 
 export default {
   setup() {
+    // Injected readonly State Variable
     const pastPasswords = inject('passwords');
     return {
       pastPasswords,

@@ -17,17 +17,14 @@ export default {
     PastPasswords,
   },
   setup() {
-    const password = ref('This is state from App');
-    const passwords = ref(['lfdafjlks', 'klfjdasljfdsjlka', 'fldasjlfksa']);
-    let count = 1;
-    const generateNewPass = () => {
-      const newPass = `item #${count}`;
-      count += 1;
-      return newPass;
-    };
-    const updatePassword = () => {
-      passwords.value.push(password.value);
-      password.value = generateNewPass();
+    const password = ref('');
+    const passwords = ref([]);
+
+    const updatePassword = (newPass) => {
+      if (password.value !== '') {
+        passwords.value.push(password.value);
+      }
+      password.value = newPass;
     };
 
     provide('passwords', readonly(passwords));
