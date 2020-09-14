@@ -20,10 +20,11 @@ export default {
 
 <style lang="scss" scoped>
   #pastPasswords{
-    // display:grid;
+    display:grid;
     width:90%;
-    display:flex;
-    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 80px;
+    // align-items: center;
     margin:0 auto;
   }
 </style>
